@@ -95,3 +95,16 @@ align-items: center;
     box-shadow: 0px 0px 20px 10px white;
 
 }
+
+#Action{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    border: 1px solidblack;
+    width: 9vw;
+    height: 9vh;
+    text-align: center;
+    font-size: 1.5em;
+    box-shadow: 0px 0px 20px 10px white;
+    border-radius: 2%;
+}
