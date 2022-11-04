@@ -7,7 +7,7 @@ battle that happens
 5.  Randomizing the 3 aspects
             -hull health
             -damage/fire power
-            - accuracy
+            - accuracy -- this should always change it is alwyas chaging in every ship 
                 ***Each randomizer should be a seperate function - 3 in total
 6.Two classes should be the player class and the enemey class
 7. the player class should have the stats, retreat method, a push forward/continue 
@@ -16,10 +16,14 @@ method
 response
 9. Function where the attack works then after that the other function where the enemy 
 automatically attack the player after the player attacks
+--------No right The function that is stated in 9 it usseless just make a comparision function and it attacks which ever is less than
+
 
 
 
 */
+
+const enemies = [];
 
 class playerShip {
     constructor(){
@@ -29,12 +33,31 @@ class playerShip {
     }
 }
 
-function createEnemyShips(hull, firePower, accuracy){
-
-
-
+class enemyShip{
+    constructor()
 
 }
+
+    function hull(min, max){
+        return Math.floor(Math.random()* (max - min) + min);
+    }
+    
+    console.log(hull(3, 6))
+    
+    function firePower(min, max){
+        return Math.floor(Math.random()* (max - min) + min);
+    }
+    
+    console.log(firePower(2, 4))
+    
+    function accuracy(min, max){
+        // return Math.floor(Math.random()* (max - min) + min);
+    }
+
+    console.log(accuracy(.6, .8))
+
+
+
 
 
 // class enemyShip {
@@ -43,21 +66,24 @@ function createEnemyShips(hull, firePower, accuracy){
 //     }
 // }
 
-function hullHealth(min, max){
-    return Math.floor(Math.random()* (max - min) + min);
+
+function attack (){
+    if(/* Player ship is greater than enemy ship*/){
+        // Player fire power is subtracted from the hull of the enemy 
+    } 
+    else(){
+
+    }
+    else if (//enemy ship is greater than enemy ship){
+        // Enemy fire power is subtracted from the hull of the enemy
+    }
+     
+        
+
+        
+    
 }
 
-console.log(hullHealth(3, 6))
-
-function firePower(min, max){
-    return Math.floor(Math.random()* (max - min) + min);
-}
-
-console.log(firePower(2, 4))
-
-function accuracy(min, max){
-    // return Math.floor(Math.random()* (max - min) + min);
-}
 
 function retreat (){
 
@@ -67,5 +93,7 @@ function onWards(){
 
 }
 
-console.log(accuracy(.6, .8))
+
+//What modal would it be should it reset or pause 
+
 
