@@ -24,7 +24,7 @@ automatically attack the player after the player attacks
 */
 
 const enemies = [];
-const currentTarget = [];
+
 
 
 class playerShip {
@@ -32,10 +32,22 @@ class playerShip {
     this.hull = 20;
     this.firePower = 5;
     this.accuracy = .7;
-
-return "Health - " + playerShip.hull + ', Fire Power - ' + playerShip.firePower + ', Accuracy - ' + playerShip.accuracy
+    return shipName + " : " + "Health - " + this.hull + ", Damage - " + this.firePower + ", Accuracy - " + this.accuracy
     }
+
+showHull() {
+    return this.hull;
 }
+
+showfirePower(){
+    return this.firePower;
+}
+showAim(){
+    return this.accuracy;
+}
+
+}
+let USS_Schwarzenegger = new playerShip;
 
 function createEnemy(name){
     let shipName = name;
@@ -68,13 +80,13 @@ let enemy5 = createEnemy('Urnas');
 let enemy6 = createEnemy('Appolo');
 let enemy7 = createEnemy('Zeena');
 
-let USS_Schwarzenegger = new playerShip;
+
 
 let health = USS_Schwarzenegger.hull;
 let damage = USS_Schwarzenegger.firePower;
 let sight = USS_Schwarzenegger.accuracy;
 
-document.querySelector(".playerStats").innerHTML = 'Hull: ' +  health, "Fire Power: " + damage, 'Accuracy: ' + sight; 
+// document.querySelector(".playerStats").innerHTML =['Hull: ' +  health, "Fire Power: " + damage, 'Accuracy: ' + sight]
 
 
 
@@ -99,20 +111,51 @@ console.log(enemies)
 console.log(USS_Schwarzenegger);
 
 
-// function attack (){
-//     if(/* Player ship is greater than enemy ship*/){
-//         // Player fire power is subtracted from the hull of the enemy 
-//     } 
-//     else(){
 
-//     }
-//     else if (//enemy ship is greater than enemy ship){
-//         // Enemy fire power is subtracted from the hull of the enemy
-//     }
+class action{
+aiming(accuracy){
+    return Math.random() < accuracy ? true : false
+} 
+
+firstPartyAttack(player, currentTarget){
+    let currentTarget = enemies[enemies.length - 1]
+    if(this.aiming(player.showAim())){
+        currentTarget.hull(currentTarget.hull() - playerShip.showHull())
+        currentTarget.hull() = health
+        console.log(health)
+
+    }
+}
+
+secondPartyFollows(enemy, newTarget){
+    let newTarget = playerShip
+    if(this.aiming(enemy.accuracy())){
+        newTarget.hull(newTarget.hull() - enemies[enemies.length - 1].firePower())
+        newTarget.hull() = health
+        console.log(health)
+    }
+}
+}
 
 
-    
-// }
+/*
+I know that the player ship has to compare to a certain randomized
+ number then it will subtract the firepower from the enemy 
+
+Then the same thing has to happen to the player if a certain requirements
+then add a event listener to it both where wher one activates the other follwo suit and make it much more automated.
+
+I try to to do it by myself but i spectaculaly failed at mostly everything. 
+3 Things i have to improve on would be the research skills, the ability to ask for help,
+and my creativity in these scenarios where it is asked to find your way to solving this problem.
+Have better psuedocoding as well because i was getting lost in the parts a left last
+becoming completly confusing all around.
+
+I see the future too often that i dont take notice of the present. Need to focus on the present more than the future but not only the future.
+*/
+
+
+
 
 
 function retreat (/*The pattern should be when the enemyship is 0  */ ){
